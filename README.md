@@ -17,7 +17,7 @@ For: Generación de secuencias con range() (ej. tablas de multiplicar).
 
 Desafío Integrador: Un programa completo que procesa una lista de números para encontrar máximos, mínimos, sumas, promedios y clasificación de pares/impares.
 
-🛠️ Requisitos e Instalación
+ Requisitos e Instalación
 
 Instalar Python
 
