@@ -2,7 +2,7 @@ Python Fundamentals: Guía de Actividades
 Este repositorio contiene un Notebook de Jupyter (.ipynb) con una serie de 10 actividades diseñadas para aprender y practicar los conceptos fundamentales de programación en Python.
 Las actividades abarcan desde el clásico "Hola Mundo" hasta un desafío integrador que combina lógica condicional y bucles.
 
-🚀 Contenido del Notebook
+Contenido del Notebook
 El archivo actividades.ipynb está organizado de forma progresiva:
 
 Fundamentos Básicos: Manejo de la función print, creación de variables y reconocimiento de tipos de datos (str, int, float, bool).
