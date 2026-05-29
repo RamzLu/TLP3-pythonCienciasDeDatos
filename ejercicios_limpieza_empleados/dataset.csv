@@ -1,0 +1,151 @@
+ID,Nombre_Completo,Edad,Genero,Ingresos,Domicilio,Lugar_Trabajo,Obra_Social,Fecha_Ingreso
+1,laura nez,,f,471493.0,Calle 6 # 570,El Colorado,Pami,2023-09-01
+2,Carlos Prez,48,masculino,320995.0,Calle 79 # 278,Unknown,Iasep,2023-05-24
+3,sofa lpez,40,masculino,$736519,Calle 56 # 493,Clorinda,Ninguna,2/6/2023
+4,jose Daz,33,F,797863.0,Calle 76 N° 479,Formosa Capital,Osde,2023-12-19
+5,Maria Lpez,22,FEM,457939.0,Calle 53 # 534,Clorinda,Osde,26/3/2023
+6,Pedro Daz,38,masculino,891354.0,Calle 65 # 279,Las Lomitas,Iasep,2023-10-21
+7,laura Gimenez,,m,473280.0,Calle 81 nro 787,Piran,Osde,6/5/2023
+8,sofa nez,59,FEM,$576008,Calle 48 nro 450,Piran,Osde,2023-01-07
+9,sofa prez,47,M,718093.0,Calle 59 nro 919,Unknown,Pami,2023-05-13
+10,Sofa Daz,22,F,485864.0,Calle 77 # 636,Piran,Pami,2023-08-25
+11,Sofa Duarte,150,,389478.0,Calle 51 N° 322,Clorinda,Pami,2023-08-18
+12,Sofa Romero,21,f,not_available,Calle 32 N° 298,Unknown,Osde,17/4/2023
+13,maria duarte,54,M,$687049,Calle 14 # 945,Clorinda,Ninguna,2023-10-02
+14,luca duarte,26,M,414254.0,Calle 63 N° 323,El Colorado,Ninguna,16/8/2023
+15,laura nez,58,f,701082.0,Calle 56 N° 583,Piran,Osde,2023-12-08
+16,Pedro Nez,38,masculino,828151.0,Calle 5 N° 678,El Colorado,Osde,2023-05-01
+17,Sofa Gimenez,27,FEM,$502292,Calle 61 nro 231,Las Lomitas,Pami,2023-10-10
+18,Maria Romero,35,O,876989.0,Calle 63 N° 971,Formosa Capital,Osecac,2023-09-24
+19,Lucas Gmez,28,m,766506.0,Calle 80 nro 394,Unknown,Pami,2023-10-27
+20,jose Daz,23,f,302870.0,Calle 14 N° 235,Unknown,Pami,2023-12-28
+21,Pedro Lpez,23,masculino,642077.0,Calle 86 # 765,Formosa Capital,Iasep,2023-11-15
+22,Pedro Gmez,61,,$690120,Calle 97 N° 334,Piran,Iasep,2023-12-17
+23,Luca Lpez,37,O,495996.0,Calle 53 N° 389,El Colorado,Ninguna,2023-11-03
+24,jose Romero,39,M,717278.0,Calle 82 N° 567,Unknown,Osde,27/10/2023
+25,juan fernndez,23,m,718859.0,Calle 39 # 205,Unknown,Osecac,2023-07-19
+26,carlos daz,,masculino,785449.0,Calle 88 # 507,Clorinda,Osde,22/12/2023
+27,laura Torres,24,FEM,$395485,Calle 55 # 981,El Colorado,Osecac,2023-10-13
+28,Lucas Fernndez,,,377024.0,Calle 77 nro 883,Clorinda,Ninguna,2023-10-07
+29,Sofa Prez,57,O,598073.0,Calle 30 nro 544,Piran,Osecac,12/11/2023
+30,Juan Gimenez,29,masculino,387664.0,Calle 20 # 911,Las Lomitas,Ninguna,2023-08-14
+31,jose Gmez,46,F,$545972,Calle 87 nro 786,Formosa Capital,Osde,2023-06-28
+32,pedro duarte,53,FEM,660582.0,Calle 20 nro 439,El Colorado,Osde,2023-01-27
+33,laura Gmez,abc,masculino,$529605,Calle 82 nro 640,Piran,Iasep,2023-02-23
+34,pedro daz,40,M,not_available,Calle 29 nro 794,Clorinda,Pami,2023-11-27
+35,Maria Lpez,49,f,613395.0,Calle 60 N° 233,Las Lomitas,Osde,2023-05-04
+36,Maria Gimenez,,M,856751.0,Calle 64 N° 596,Piran,Pami,2023-10-17
+37,jose daz,64,M,341012.0,Calle 78 # 304,Unknown,Iasep,2023-04-16
+38,ana prez,39,F,585300.0,Calle 29 N° 191,Las Lomitas,Iasep,2023-02-16
+39,laura gimenez,44,M,601482.0,Calle 6 nro 557,Clorinda,Osecac,2023-06-19
+40,jose Gimenez,abc,m,323987.0,Calle 84 N° 645,Unknown,Iasep,2023-04-10
+41,Pedro Duarte,,m,317345.0,Calle 85 # 292,Las Lomitas,Pami,2023-02-25
+42,Carlos Gimenez,53,F,438969.0,Calle 17 nro 915,Clorinda,Osde,2023-06-01
+43,jose lpez,35,M,818100.0,Calle 32 N° 165,Las Lomitas,Osde,1/8/2023
+44,jose lpez,26,O,560735.0,Calle 81 nro 780,El Colorado,Iasep,2023-01-27
+45,Lucas Duarte,53,m,692165.0,Calle 32 nro 536,El Colorado,Ninguna,1/10/2023
+46,maria nez,31,m,787040.0,Calle 79 N° 186,Las Lomitas,Pami,2023-04-09
+47,carlos gimenez,31,FEM,752244.0,Calle 63 nro 203,Piran,Pami,2023-07-14
+48,Juan Daz,,f,$360705,Calle 14 nro 207,Formosa Capital,Osde,2023-07-17
+49,juan daz,35,M,not_available,Calle 72 nro 157,Las Lomitas,Osde,2023-12-16
+50,Maria Nez,abc,O,893880.0,Calle 62 nro 299,Piran,Ninguna,2023-09-04
+51,Sofa Gimenez,150,M,652842.0,Calle 58 N° 637,Unknown,Osecac,2023-08-24
+52,laura Duarte,32,,746321.0,Calle 14 N° 608,Unknown,Osecac,2023-11-27
+53,laura Torres,45,masculino,510732.0,Calle 82 N° 607,Las Lomitas,Iasep,12/6/2023
+54,Ana Daz,,masculino,682820.0,Calle 88 nro 458,Piran,Pami,2023-01-24
+55,juan nez,-5,f,714942.0,Calle 42 # 169,Clorinda,Ninguna,2023-01-16
+56,Luca Fernndez,59,m,888407.0,Calle 28 N° 923,Unknown,Osde,2023-04-09
+57,Lucas Lpez,62,FEM,431663.0,Calle 36 # 903,Unknown,Pami,2023-02-14
+58,sofa daz,-5,f,$643383,Calle 88 N° 720,Las Lomitas,Osecac,2023-06-23
+59,Juan Fernndez,63,FEM,457116.0,Calle 22 # 265,Formosa Capital,Ninguna,2023-04-12
+60,Pedro Daz,43,masculino,392717.0,Calle 69 # 732,El Colorado,Osde,26/3/2023
+61,Juan Prez,55,M,847219.0,Calle 20 nro 697,Piran,Ninguna,2023-08-18
+62,Sofa Torres,44,masculino,$783366,Calle 84 N° 211,Piran,Pami,9/1/2023
+63,jose duarte,27,M,$819249,Calle 17 nro 687,Unknown,Ninguna,2023-01-08
+64,Lucas Fernndez,,,699521.0,Calle 10 nro 437,Las Lomitas,Osde,2023-04-25
+65,Maria Daz,64,O,not_available,Calle 30 # 768,El Colorado,Osde,2023-08-08
+66,Carlos Romero,40,masculino,not_available,Calle 36 nro 508,Clorinda,Osecac,2023-08-07
+67,Ana Torres,58,f,$548798,Calle 66 # 594,Las Lomitas,Osde,2023-10-26
+68,carlos nez,abc,m,882761.0,Calle 35 nro 204,Piran,Osecac,2023-05-05
+69,Carlos Gmez,35,F,691067.0,Calle 63 nro 986,Las Lomitas,Iasep,22/12/2023
+70,Carlos Gimenez,22,O,764234.0,Calle 52 # 573,Las Lomitas,Pami,27/7/2023
+71,Ana Gimenez,39,,308865.0,Calle 39 N° 239,Clorinda,Ninguna,2023-03-25
+72,Luca Romero,,M,366189.0,Calle 50 # 984,Las Lomitas,Ninguna,2023-02-02
+73,Maria Daz,52,O,$849340,Calle 5 # 398,El Colorado,Iasep,16/12/2023
+74,ana gmez,39,O,785009.0,Calle 44 # 699,El Colorado,Ninguna,26/1/2023
+75,Ana Duarte,65,M,$508816,Calle 88 # 980,Formosa Capital,Osde,2023-06-23
+76,Juan Nez,,m,not_available,Calle 25 N° 732,Formosa Capital,Pami,22/4/2023
+77,Luca Torres,38,F,818352.0,Calle 29 nro 543,El Colorado,Osecac,2023-11-17
+78,sofa lpez,51,f,357405.0,Calle 26 N° 616,El Colorado,Osecac,2023-04-15
+79,laura prez,44,m,322171.0,Calle 65 # 946,El Colorado,Osde,2023-03-12
+80,jose Prez,49,masculino,813112.0,Calle 45 # 967,Piran,Osecac,23/11/2023
+81,sofa duarte,52,m,577001.0,Calle 74 nro 348,El Colorado,Iasep,2023-06-04
+82,Maria Nez,50,FEM,not_available,Calle 11 nro 939,Las Lomitas,Ninguna,2023-08-05
+83,Luca Duarte,64,f,$579573,Calle 83 N° 204,Piran,Iasep,2023-07-14
+84,Juan Prez,30,F,685721.0,Calle 37 N° 397,Formosa Capital,Osecac,2023-09-17
+85,Ana Nez,60,O,360254.0,Calle 95 # 753,Piran,Pami,14/2/2023
+86,Juan Prez,21,FEM,428276.0,Calle 63 nro 380,El Colorado,Pami,2023-11-19
+87,maria gimenez,32,f,678406.0,Calle 3 nro 546,Clorinda,Iasep,2023-10-28
+88,Luca Torres,22,FEM,487437.0,Calle 93 N° 825,El Colorado,Osecac,2023-02-18
+89,lucas lpez,,f,730555.0,Calle 81 # 650,Piran,Osecac,2023-12-18
+90,Lucas Fernndez,36,,630577.0,Calle 5 N° 507,Formosa Capital,Pami,2023-03-13
+91,carlos prez,-5,,796139.0,Calle 83 nro 957,Piran,Osecac,2023-12-01
+92,laura fernndez,47,masculino,$447230,Calle 15 N° 615,Clorinda,Osde,2023-04-18
+93,Pedro Romero,43,FEM,819938.0,Calle 4 nro 478,Las Lomitas,Pami,2023-09-10
+94,laura gmez,,FEM,447521.0,Calle 41 # 379,Las Lomitas,Osde,2023-10-14
+95,Juan Gimenez,37,FEM,433898.0,Calle 89 N° 951,Clorinda,Osecac,9/3/2023
+96,Carlos Gimenez,27,FEM,585678.0,Calle 65 N° 823,Unknown,Osde,2023-09-01
+97,laura Torres,150,M,$348511,Calle 20 N° 409,Formosa Capital,Pami,14/7/2023
+98,Luca Nez,36,M,604579.0,Calle 62 N° 283,Piran,Ninguna,2023-06-03
+99,Carlos Gmez,64,,not_available,Calle 54 # 179,Formosa Capital,Osecac,11/12/2023
+100,Pedro Duarte,59,,622828.0,Calle 50 nro 300,Formosa Capital,Ninguna,2023-05-05
+101,laura fernndez,,O,$870817,Calle 75 nro 352,Formosa Capital,Osde,2/11/2023
+102,Carlos Daz,20,f,341850.0,Calle 77 # 102,Formosa Capital,Pami,2023-02-19
+103,Maria Lpez,61,M,829129.0,Calle 100 # 483,Unknown,Iasep,2023-12-09
+104,pedro gmez,45,m,490457.0,Calle 96 N° 693,Unknown,Osecac,2023-04-19
+105,luca torres,29,f,427438.0,Calle 93 # 644,El Colorado,Osecac,2023-07-20
+106,laura Torres,58,F,778408.0,Calle 21 nro 749,Unknown,Pami,2023-12-04
+107,carlos romero,59,M,584940.0,Calle 49 nro 832,Unknown,Iasep,2023-01-17
+108,ana torres,62,masculino,730376.0,Calle 99 # 445,Formosa Capital,Osde,3/9/2023
+109,laura Gimenez,30,O,$719381,Calle 23 nro 811,Las Lomitas,Pami,27/6/2023
+110,Ana Prez,31,f,617485.0,Calle 47 nro 617,Las Lomitas,Osde,2023-07-16
+111,Luca Romero,,M,687105.0,Calle 51 N° 137,Unknown,Osecac,21/1/2023
+112,lucas nez,32,masculino,$609469,Calle 73 nro 590,Formosa Capital,Osecac,2023-07-03
+113,laura Lpez,-5,,$808862,Calle 27 nro 948,El Colorado,Ninguna,2023-12-27
+114,sofa gimenez,54,,588324.0,Calle 92 # 330,Las Lomitas,Iasep,2023-05-06
+115,Sofa Prez,62,M,$584654,Calle 50 N° 222,El Colorado,Osde,2023-12-28
+116,Lucas Fernndez,36,masculino,731501.0,Calle 78 # 815,Piran,Osecac,25/7/2023
+117,ana gimenez,42,masculino,660019.0,Calle 90 N° 223,Las Lomitas,Osde,2023-05-18
+118,Sofa Torres,50,,818119.0,Calle 17 # 695,Formosa Capital,Iasep,19/1/2023
+119,Luca Nez,abc,m,374460.0,Calle 66 N° 748,Piran,Ninguna,3/9/2023
+120,laura Nez,,M,not_available,Calle 28 N° 715,Clorinda,Pami,2023-10-02
+121,Maria Prez,abc,F,$699121,Calle 56 nro 555,Clorinda,Pami,2023-09-07
+122,ana duarte,45,F,$661672,Calle 5 nro 396,Clorinda,Osde,2023-01-07
+123,Sofa Torres,,M,563713.0,Calle 12 N° 456,Clorinda,Osde,2023-03-13
+124,pedro prez,58,f,$708322,Calle 95 # 658,Formosa Capital,Iasep,2023-09-28
+125,Pedro Duarte,33,M,435231.0,Calle 98 # 689,Formosa Capital,Osde,20/5/2023
+126,laura Nez,37,FEM,790802.0,Calle 59 N° 333,Las Lomitas,Osde,28/8/2023
+127,laura Gmez,-5,,501776.0,Calle 34 # 221,Clorinda,Iasep,14/12/2023
+128,jose Lpez,,O,$851310,Calle 27 N° 791,Piran,Osde,5/12/2023
+129,lucas torres,22,F,442341.0,Calle 87 N° 249,Piran,Ninguna,2023-01-25
+130,juan duarte,,O,410541.0,Calle 7 N° 390,Unknown,Osde,2023-03-14
+131,Juan Lpez,,O,$546717,Calle 8 N° 182,El Colorado,Iasep,2023-01-21
+132,jose prez,20,FEM,604256.0,Calle 20 # 408,Formosa Capital,Ninguna,2023-08-28
+133,Juan Prez,abc,m,446960.0,Calle 93 nro 776,Piran,Ninguna,2023-02-07
+134,luca lpez,,F,$534902,Calle 46 # 738,Las Lomitas,Osde,2023-10-10
+135,Lucas Nez,55,f,899045.0,Calle 87 N° 341,Unknown,Iasep,2023-03-01
+136,Ana Prez,33,masculino,663127.0,Calle 53 # 839,El Colorado,Osde,2023-02-20
+137,jose Fernndez,,f,631848.0,Calle 55 N° 318,Formosa Capital,Iasep,2023-05-04
+138,juan duarte,40,f,754132.0,Calle 19 N° 170,El Colorado,Iasep,2023-02-10
+139,laura gmez,,F,not_available,Calle 43 nro 904,Clorinda,Osecac,2023-11-20
+140,carlos lpez,54,F,331803.0,Calle 100 # 164,El Colorado,Osecac,28/10/2023
+141,Lucas Gimenez,,f,438993.0,Calle 44 # 690,Las Lomitas,Ninguna,19/3/2023
+142,Juan Duarte,,F,720804.0,Calle 94 # 591,Piran,Iasep,2023-02-09
+143,laura Torres,40,O,$789375,Calle 14 N° 559,Unknown,Ninguna,2023-07-14
+144,Maria Romero,44,M,$793756,Calle 4 # 863,Piran,Pami,2023-08-14
+145,Pedro Torres,26,masculino,$862204,Calle 7 # 501,Formosa Capital,Osde,2023-08-26
+146,sofa torres,61,,734436.0,Calle 85 nro 992,Unknown,Pami,2023-02-11
+147,laura torres,abc,,457374.0,Calle 80 N° 292,Clorinda,Ninguna,2023-10-01
+148,Ana Daz,54,f,$664128,Calle 34 N° 495,Las Lomitas,Osecac,25/5/2023
+149,Carlos Nez,,F,446085.0,Calle 58 nro 242,Piran,Iasep,2023-02-04
+150,Pedro Romero,62,F,477546.0,Calle 34 nro 505,Formosa Capital,Osecac,2023-03-14
