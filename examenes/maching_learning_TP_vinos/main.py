@@ -1,9 +1,25 @@
 #importo la libreria fastapi con todas las herramientas de la clase 
 #principal que es FastAPI que seria como el molde para construir este servidor web
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 #jolib es una libr para empaquetar y desemp objet pesados de py (como el modelo de vinos)
 import joblib
+from pydantic import BaseModel
+import pandas as pd #p/darle forma correcta al modleo
 
+#--------------------------------------creacion modelo---------------------------------------------------
+#creo un esquema
+class VinoData(BaseModel):
+    fixed_acidity: float
+    volatile_acidity: float
+    citric_acid: float
+    residual_sugar: float
+    chlorides: float
+    free_sulfur_dioxide: float
+    total_sulfur_dioxide: float
+    density: float
+    pH: float
+    sulphates: float
+    alcohol: float
 #-------------------------------------inicio de la app--------------------------------------------------
 #creo el servidor con el molde del FastAPI y lo guardo. Doy un titulo y descripcion
 # en una variable llamada "app". Todas las rutas, recepcion de datos y demas se 
