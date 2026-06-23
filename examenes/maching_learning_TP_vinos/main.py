@@ -1,10 +1,10 @@
 #importo la libreria fastapi con todas las herramientas de la clase 
 #principal que es FastAPI que seria como el molde para construir este servidor web
 from fastapi import FastAPI, HTTPException
-#jolib es una libr para empaquetar y desemp objet pesados de py (como el modelo de vinos)
+#joblib es una libr para empaquetar y desemp objet pesados de py (como el modelo de vinos)
 import joblib
 from pydantic import BaseModel
-import pandas as pd #p/darle forma correcta al modleo
+import pandas as pd #p/darle forma correcta al modelo
 
 #--------------------------------------creacion modelo---------------------------------------------------
 #creo un esquema
@@ -20,6 +20,7 @@ class VinoData(BaseModel):
     pH: float
     sulphates: float
     alcohol: float
+
 #-------------------------------------inicio de la app--------------------------------------------------
 #creo el servidor con el molde del FastAPI y lo guardo. Doy un titulo y descripcion
 # en una variable llamada "app". Todas las rutas, recepcion de datos y demas se 
@@ -31,14 +32,14 @@ app = FastAPI(
     version= "1.0.0" #etiqueta p/llevar el control de versiones
 )
 
-#---------------------------------icarga de modelo y escalador-------------------------------------------
+#---------------------------------carga de modelo y escalador-------------------------------------------
 #funcion try...catch pero de python
 try:
     #los .pkl son archivos binarios cerrados. No puedo abrirlos con un bloc de notas
-    #la herramienta joblib.load() sirve para "abrir y leer" estos archivos especiales y traerlos a la memoria de tu servedr
+    #la herramienta joblib.load() sirve para "abrir y leer" estos archivos especiales y traerlos a la memoria de tu servidor
     modelo = joblib.load("models/modelo_vino.pkl") # modelo es para cargar el cerebro que entreno Lu, lo q predice 
     escalador = joblib.load("models/scaler_vino.pkl") #escalador es para cargar la regla matmtica. Cuando el front mande datos de un nuevo vino
-    #este escalador ajustara los numeros antes de pasarlo al brocere para evitar confuciones
+    #este escalador ajustara los numeros antes de pasarlo al cerebro para evitar confusiones
     print("cerebro conectado: modelo y escalador conectados")
 except Exception as e:
     print("error al cargar los archivos de ML")
@@ -46,17 +47,17 @@ except Exception as e:
 #------------------------------------------endpoint p/prediccion-------------------------------------------
 @app.post("/predecir") #aca esperan los datos
 #post pq desde el front nos mandaran la info de las caracteristicas de los vinos
-#cuando llegue una eticion devuelve este diccionario para que FastAPI empaquete esto
-#y lo traduzca automat. a JSONpara el nav
+#cuando llegue una peticion devuelve este diccionario para que FastAPI empaquete esto
+#y lo traduzca automat. a JSON para el nav
 def hacer_prediccion(datos: VinoData): #configuracion. VinoData es el molde q creamos arriba (BaseModel), es una lista con las caracteristicas del vino q mandan del front
-    #datos: npmbre de la caja etiquetada donde guardo la info q mandan
+    #datos: nombre de la caja etiquetada donde guardo la info q mandan
     
     df_usuario = pd.DataFrame([{
         
         #estos nombres son los mismos q del CSV q/entreno Lu, si no coinciden entonces no funcionara el modelo
        #no estoy repitiendo codigo, estoy mapeando/trasladando los datos de un formato a otro. De la caja de datos q mandan del front (datos) a un dataframe (df_usuario) q es
-       #el formato q necesita el modelo. Si paso el objer de datos directo, el modelo no lo va a entender y va a tirar erro. Al hacer pd.DataFrame([{ ... }]) agarro la info y las 
-       #hago una mini tabal q/tiene todo en una sola fila. Saco los valores de la caja y los acomodo en columnas de una tabla p/q el cerebro matemac pueda leer
+       #el formato q necesita el modelo. Si paso el objeto de datos directo, el modelo no lo va a entender y va a tirar error. Al hacer pd.DataFrame([{ ... }]) agarro la info y las 
+       #hago una mini tabla q/tiene todo en una sola fila. Saco los valores de la caja y los acomodo en columnas de una tabla p/q el cerebro matematico pueda leer
        "fixed acidity": datos.fixed_acidity,
         "volatile acidity": datos.volatile_acidity,
         "citric acid": datos.citric_acid,
@@ -80,20 +81,28 @@ def hacer_prediccion(datos: VinoData): #configuracion. VinoData es el molde q cr
         #aca entran los datos ya ajustados al modelo y el modelo devuelve la prediccion de calidad del vino. La prediccion es un array 
         #con un solo valor, por eso accedo al primer elemento con [0]
         
-        #devuelvo un diccionario con un mensaje de exito y la prediccion redondeada a 2 decimales. FastAPI lo traduce a JSON y lo envia al front
-        #con prediccion[0] le digo que saque el numero de la prediccion 
-        #con float(...) lo convierto en decimal de py normal (pq la web no entiende los decimales de la libreria)
-        #con round(..., 2) lo redondeo a 2 decimales para q el front reciba un 5.49 en uvez de un 5.4899999...
+        #saco el numero exacto de la prediccion (q viene en el array) y me aseguro q sea un entero (0 o 1)
+        resultado_ia = int(prediccion[0])
+        
+        #como el modelo devuelve 0 o 1 (lenguaje maquina), lo traduzco a lenguaje humano p/q el front pueda mostrar algo lindo en la web
+        #si el modelo devuelve 1 entonces es vino premium, si devuelve 0 es vino regular
+        if resultado_ia == 1:
+            etiqueta_humana = "Vino Premium"
+        else:
+            etiqueta_humana = "Vino Regular"
+        
+        #devuelvo un diccionario con el msj de exito, el codigo de la ia y el texto traducido. 
+        #FastAPI empaqueta todo esto, lo pasa a JSON y lo manda directo al front listito p/usar
         return{
             "mensaje": "Predicción realizada con éxito",
-            "calidad_predicha": round(float(prediccion[0]), 2)
+            "codigo_calidad": resultado_ia,
+            "resultado": etiqueta_humana
         }
     
-    #es el catch de js pero en py. Si el modelo no puede hacer la prediccion entonces devuelve un error 400 y un mensaje de error
+    #es el catch de js pero en py. Si el modelo falla aca lo atrapamos
     #Exception as e: atrapa los errores y los guarda en la variable e. Luego uso str(e) para convertir el error a string y mostrarlo 
     #en el mensaje de error
-    #raise HTTPException(...) es para devolver un error 400 al front con un mensaje de error. FastAPI lo traduce a JSON y lo envia al front
-    # y al usar raise HTTPException(status_code=400...) le mando el msj al nav del user, asi el front puede mostrarlo en la web. Si no uso raise 
-    #HTTPException(...) el front no recibe el msj y no sabe q paso
+    #raise HTTPException(...) es para devolver un error HTTP (ej 400) oficial. Si no uso raise 
+    #HTTPException el front no recibe un codigo de error real y se queda colgado sin saber q paso
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Error en el modelo: {str(e)}")
