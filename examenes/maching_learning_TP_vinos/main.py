@@ -1,6 +1,7 @@
 #importo la libreria fastapi con todas las herramientas de la clase 
 #principal que es FastAPI que seria como el molde para construir este servidor web
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware 
 #joblib es una libr para empaquetar y desemp objet pesados de py (como el modelo de vinos)
 import joblib
 from pydantic import BaseModel
@@ -30,6 +31,15 @@ app = FastAPI(
     title= "API para la Prediccion de Vinos",
     description="Backend para el modelo de Machine Learning del TP final.",
     version= "1.0.0" #etiqueta p/llevar el control de versiones
+)
+
+#--------------------------------config de cors-------------------------------------------
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # permite todas las origenes
+    allow_credentials=True,
+    allow_methods=["*"],  # permite todos los metodos
+    allow_headers=["*"],  # permite todos los encabezados
 )
 
 #---------------------------------carga de modelo y escalador-------------------------------------------
@@ -87,9 +97,9 @@ def hacer_prediccion(datos: VinoData): #configuracion. VinoData es el molde q cr
         #como el modelo devuelve 0 o 1 (lenguaje maquina), lo traduzco a lenguaje humano p/q el front pueda mostrar algo lindo en la web
         #si el modelo devuelve 1 entonces es vino premium, si devuelve 0 es vino regular
         if resultado_ia == 1:
-            etiqueta_humana = "Vino Premium"
+            etiqueta_humana = "Vino de Alta Calidad"
         else:
-            etiqueta_humana = "Vino Regular"
+            etiqueta_humana = "Vino de Calidad Regular"
         
         #devuelvo un diccionario con el msj de exito, el codigo de la ia y el texto traducido. 
         #FastAPI empaqueta todo esto, lo pasa a JSON y lo manda directo al front listito p/usar
