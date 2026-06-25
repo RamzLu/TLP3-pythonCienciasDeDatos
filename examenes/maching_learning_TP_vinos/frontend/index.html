@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sommelier IA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --burdeos: #6b1a2b;
+        --crema: #f5efe6;
+        --oro: #c9a84c;
+        --texto-oscuro: #2c2c2e;
+        --texto-claro: #f5efe6;
+      }
+
+      body {
+        margin: 0;
+        background-image: url("corchos.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 900px;
+        width: 95%;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .panel-izquierdo {
+        flex: 1;
+        padding: 50px;
+      }
+
+      .icono {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+        color: var(--burdeos);
+        margin: 0;
+        font-size: 2.2rem;
+      }
+
+      .grid-formulario {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      .input-group label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--burdeos);
+      }
+      .input-group input {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      button {
+        grid-column: span 2;
+        padding: 15px;
+        background: var(--burdeos);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: var(--oro);
+      }
+
+      /* PANEL DERECHO */
+      .panel-derecho {
+        flex: 1;
+        padding: 50px;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .panel-derecho::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("manosuvas.jpg");
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+      }
+      .panel-derecho::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(107, 26, 43, 0.7);
+        z-index: 0;
+      }
+      .panel-derecho > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .tarjeta-resultado {
+        text-align: center;
+        display: none;
+      }
+
+      /* Fuente unificada para etiquetas */
+      .etiqueta-calidad,
+      #mensaje-espera {
+        font-family: "Playfair Display", serif;
+      }
+
+      .etiqueta-calidad {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        color: var(--oro);
+      }
+
+      .stats-grid {
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+      }
+      .stat-item {
+        padding: 10px;
+        flex: 1;
+      }
+      .stat-val {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: white;
+        font-family: "Playfair Display", serif;
+      }
+      .stat-label {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        opacity: 0.9;
+        font-family: "Inter", sans-serif;
+      }
+
+      #mensaje-espera {
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-align: center;
+        color: var(--oro);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel-izquierdo">
+        <span class="icono">🍷</span>
+        <h1>Sommelier IA</h1>
+        <p>Análisis de precisión vitivinícola</p>
+        <form id="formulario-vino">
+          <div class="grid-formulario">
+            <div class="input-group">
+              <label>Alcohol</label
+              ><input
+                type="number"
+                step="any"
+                id="alcohol"
+                value="12.8"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>pH</label
+              ><input type="number" step="any" id="pH" value="3.35" required />
+            </div>
+            <div class="input-group">
+              <label>Acidez Fija</label
+              ><input
+                type="number"
+                step="any"
+                id="fixed_acidity"
+                value="7.9"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Acidez Volátil</label
+              ><input
+                type="number"
+                step="any"
+                id="volatile_acidity"
+                value="0.35"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Ácido Cítrico</label
+              ><input
+                type="number"
+                step="any"
+                id="citric_acid"
+                value="0.46"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Azúcar Residual</label
+              ><input
+                type="number"
+                step="any"
+                id="residual_sugar"
+                value="3.6"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Cloruros</label
+              ><input
+                type="number"
+                step="any"
+                id="chlorides"
+                value="0.078"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Azufre Libre</label
+              ><input
+                type="number"
+                step="any"
+                id="free_sulfur_dioxide"
+                value="15.0"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Azufre Total</label
+              ><input
+                type="number"
+                step="any"
+                id="total_sulfur_dioxide"
+                value="37.0"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Densidad</label
+              ><input
+                type="number"
+                step="any"
+                id="density"
+                value="0.9973"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Sulfatos</label
+              ><input
+                type="number"
+                step="any"
+                id="sulphates"
+                value="0.86"
+                required
+              />
+            </div>
+            <button type="submit">Analizar Calidad</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel-derecho">
+        <div id="mensaje-espera"><p>Ingrese su vino...</p></div>
+        <div class="tarjeta-resultado" id="tarjeta-resultado">
+          <h2 class="etiqueta-calidad" id="resultado-texto"></h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-val" id="val-alc">0</span
+              ><span class="stat-label">Alcohol</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val" id="val-sul">0</span
+              ><span class="stat-label">Sulfatos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val" id="val-aci">0</span
+              ><span class="stat-label">Acidez</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const formulario = document.getElementById("formulario-vino");
+      formulario.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        document.getElementById("mensaje-espera").innerHTML = "Procesando...";
+
+        const alc = document.getElementById("alcohol").value;
+        const sul = document.getElementById("sulphates").value;
+        const aci = document.getElementById("volatile_acidity").value;
+
+        const cajaDeDatos = {
+          fixed_acidity: parseFloat(
+            document.getElementById("fixed_acidity").value,
+          ),
+          volatile_acidity: parseFloat(aci),
+          citric_acid: parseFloat(document.getElementById("citric_acid").value),
+          residual_sugar: parseFloat(
+            document.getElementById("residual_sugar").value,
+          ),
+          chlorides: parseFloat(document.getElementById("chlorides").value),
+          free_sulfur_dioxide: parseFloat(
+            document.getElementById("free_sulfur_dioxide").value,
+          ),
+          total_sulfur_dioxide: parseFloat(
+            document.getElementById("total_sulfur_dioxide").value,
+          ),
+          density: parseFloat(document.getElementById("density").value),
+          pH: parseFloat(document.getElementById("pH").value),
+          sulphates: parseFloat(sul),
+          alcohol: parseFloat(alc),
+        };
+
+        try {
+          const respuesta = await fetch("http://127.0.0.1:8000/predecir", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(cajaDeDatos),
+          });
+          const datosDelBackend = await respuesta.json();
+          document.getElementById("mensaje-espera").style.display = "none";
+          document.getElementById("tarjeta-resultado").style.display = "block";
+          document.getElementById("resultado-texto").innerText =
+            datosDelBackend.resultado;
+          document.getElementById("val-alc").innerText = alc;
+          document.getElementById("val-sul").innerText = sul;
+          document.getElementById("val-aci").innerText = aci;
+        } catch (error) {
+          document.getElementById("mensaje-espera").innerHTML =
+            "Error de conexion. revisar si FastAPI esta corriendo";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -95,18 +95,28 @@ def hacer_prediccion(datos: VinoData): #configuracion. VinoData es el molde q cr
         resultado_ia = int(prediccion[0])
         
         #como el modelo devuelve 0 o 1 (lenguaje maquina), lo traduzco a lenguaje humano p/q el front pueda mostrar algo lindo en la web
-        #si el modelo devuelve 1 entonces es vino premium, si devuelve 0 es vino regular
+        #si el modelo devuelve 1 entonces es vino de alta calidad, si devuelve 0 es vino de calidad regular
         if resultado_ia == 1:
             etiqueta_humana = "Vino de Alta Calidad"
         else:
             etiqueta_humana = "Vino de Calidad Regular"
         
-        #devuelvo un diccionario con el msj de exito, el codigo de la ia y el texto traducido. 
-        #FastAPI empaqueta todo esto, lo pasa a JSON y lo manda directo al front listito p/usar
-        return{
+        #devuelvo un diccionario con el msj de exito, el codigo de la ia, el texto traducido y las estadisticas fijas p/las barras de la interfaz
+        #agregue las keys de precision e importancia_variables mapeadas exactas como pide el diseño de las tarjetas de sommelier ia
+        #FastAPI empaqueta todo esto, lo pasa a JSON y lo manda directo al front listito p/usar sin romper nada
+        return {
             "mensaje": "Predicción realizada con éxito",
             "codigo_calidad": resultado_ia,
-            "resultado": etiqueta_humana
+            "resultado": etiqueta_humana,
+            "precision_modelo": "92.14%",
+            "importancia_variables": {
+                "alcohol": "100%",
+                "sulphates": "64%",
+                "volatile_acidity": "55%",
+                "total_sulfur_dioxide": "45%",
+        
+                "density": "41%"
+            }
         }
     
     #es el catch de js pero en py. Si el modelo falla aca lo atrapamos
