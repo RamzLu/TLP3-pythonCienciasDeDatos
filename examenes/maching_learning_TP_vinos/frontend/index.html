@@ -346,14 +346,11 @@
         };
 
         try {
-          const respuesta = await fetch(
-            "https://tlp3-pythoncienciasdedatos-1.onrender.com/predecir",
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(cajaDeDatos),
-            },
-          );
+          const respuesta = await fetch("http://127.0.0.1:8000/predecir", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(cajaDeDatos),
+          });
           const datosDelBackend = await respuesta.json();
           document.getElementById("mensaje-espera").style.display = "none";
           document.getElementById("tarjeta-resultado").style.display = "block";
