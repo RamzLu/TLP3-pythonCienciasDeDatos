@@ -99,7 +99,7 @@ def hacer_prediccion(datos: VinoData): #configuracion. VinoData es el molde q cr
         if resultado_ia == 1:
             etiqueta_humana = "Vino de Alta Calidad"
         else:
-            etiqueta_humana = "Vino de Calidad Regular"
+            etiqueta_humana = "Vino de Calidad Baja/Regular"
         
         #devuelvo un diccionario con el msj de exito, el codigo de la ia, el texto traducido y las estadisticas fijas p/las barras de la interfaz
         #agregue las keys de precision e importancia_variables mapeadas exactas como pide el diseño de las tarjetas de sommelier ia
